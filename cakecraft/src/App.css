@@ -73,17 +73,19 @@ body, html {
 }
 
 .site-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 400;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 200%;
+  font-weight: 800;
+  position: center;
+  text-align: center;
 }
 
 .subtitle {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 0.9rem;
-  font-style: italic;
+  font-weight: 200;
+  font-size: 70%;
   color: #56331B;
+  margin-top: -4%;
 }
 
 /* Middle nav buttons */

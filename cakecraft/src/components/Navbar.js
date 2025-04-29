@@ -13,7 +13,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="nav-left">
         <h1 className="site-title">CakeCraft</h1>
-        <p className="subtitle">Where Technology Meets Cake Creation</p>
+        <p className="subtitle">where technology meets cake creation</p>
       </div>
 
       <div className="nav-middle">
