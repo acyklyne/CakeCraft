@@ -1,0 +1,238 @@
+/* Add padding to the App container to prevent content from hiding behind fixed elements */
+.App {
+  padding-top: calc(32px + 72px); /* top-header height + navbar height */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #FFF9CE; /* Primary Background Color */
+  color: #56331B; /* Secondary Color */
+  scroll-behavior: smooth;
+}
+
+/* Top header */
+.top-header {
+  background-color: #56331B;
+  color: #FFF9CE;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  position: fixed; /* Change from sticky to fixed */
+  top: 0;
+  width: 100%; /* Add width */
+  z-index: 1000;
+}
+
+/* Navigation bar */
+.navbar {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFF9CE;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 32px;
+  width: 100%;
+  z-index: 999;
+}
+
+/* Left side nav */
+.nav-left {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.site-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #56331B;
+}
+
+/* Middle nav buttons */
+.nav-middle {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: #56331B;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 10px;
+}
+
+.nav-btn:hover,
+.nav-btn:focus {
+  color: #c9885d;
+  outline: none;
+}
+
+/* Right side icon buttons */
+.nav-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.icon-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #56331B;
+  transition: fill 0.3s ease;
+}
+
+.icon-btn:hover svg,
+.icon-btn:focus svg {
+  fill: #c9885d;
+}
+
+.icon-btn:hover,
+.icon-btn:focus {
+  transform: scale(1.1);
+  outline: none;
+}
+
+/* Main section with full screen background */
+.main-section {
+  height: calc(100vh - 5rem);
+  background-image: url('./assets/bg.jpg'); /* Updated path */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.content-wrapper {
+  position: absolute;
+  top: 60%;
+  left: 7%;
+  transform: translateY(-50%);
+}
+
+.slogan {
+  color: #5F3A20;
+  font-size: 420%;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 58;
+  line-height: 1.4;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Overlay to darken background for button visibility */
+.overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative;
+}
+
+/* Make Your Design button */
+.design-btn {
+  font-style: italic;
+  background-color: #FFF9CE;
+  color: #56331B;
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding: 1rem 3rem;
+  border: 3px solid #56331B;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(86, 51, 27, 0.4);
+  margin-bottom: 10%;
+  margin-left: 7%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+.design-btn:hover,
+.design-btn:focus {
+  background-color: #56331B;
+  color: #FFF9CE;
+  outline: none;
+}
+
+.plus-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-middle {
+    display: none; /* hide nav buttons on smaller screens */
+  }
+  .nav-left {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+  }
+  .site-title {
+    font-size: 1.4rem;
+  }
+  .subtitle {
+    display: none;
+  }
+}
