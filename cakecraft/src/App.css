@@ -104,8 +104,8 @@ body, html {
   border: none;
   color: #56331B;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 22px;
+  font-weight: 10%;
+  font-size: 21px;
   cursor: pointer;
   padding: 0.3rem 0.6rem;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -132,6 +132,7 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: -2%;
   transition: transform 0.2s ease;
 }
 
