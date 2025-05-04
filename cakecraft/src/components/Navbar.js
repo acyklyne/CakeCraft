@@ -1,11 +1,18 @@
 import React from 'react';
 import { FaSearch, FaUser, FaHeart, FaShoppingCart } from 'react-icons/fa';
 
-function Navbar() {
+function Navbar({ cartItems = [], favorites = [], onCartClick, onFavoritesClick }) {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 120;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -31,11 +38,29 @@ function Navbar() {
         <button className="icon-btn" aria-label="Profile">
           <FaUser />
         </button>
-        <button className="icon-btn" aria-label="Favorites">
+        <button 
+          className="icon-btn favorites-btn" 
+          onClick={onFavoritesClick}
+          aria-label={`Favorites (${favorites.length} items)`}
+        >
           <FaHeart />
+          {favorites.length > 0 && (
+            <span className="favorites-count" aria-hidden="true">
+              {favorites.length}
+            </span>
+          )}
         </button>
-        <button className="icon-btn" aria-label="Cart">
+        <button 
+          className="icon-btn cart-btn" 
+          onClick={onCartClick}
+          aria-label={`Shopping cart with ${cartItems.length} items`}
+        >
           <FaShoppingCart />
+          {cartItems.length > 0 && (
+            <span className="cart-count" aria-hidden="true">
+              {cartItems.length}
+            </span>
+          )}
         </button>
       </div>
     </nav>
