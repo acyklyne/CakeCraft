@@ -1,0 +1,115 @@
+.cake-designer-container {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: #FFF9CE;
+padding: 2rem;
+border-radius: 12px;
+border: 2px solid #56331B;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+z-index: 1000;
+width: 90%;
+max-width: 800px;
+}
+
+.close-button {
+position: absolute;
+top: 1rem;
+right: 1rem;
+background: none;
+border: none;
+color: #56331B;
+font-size: 1.5rem;
+cursor: pointer;
+padding: 0.5rem;
+transition: all 0.3s ease;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+width: 40px;
+height: 40px;
+}
+
+.close-button:hover {
+background-color: rgba(86, 51, 27, 0.1);
+transform: scale(1.1);
+}
+
+.cake-designer-container h2 {
+color: #56331B;
+text-align: center;
+margin-bottom: 1.5rem;
+font-size: 1.8rem;
+}
+
+.cake-parts {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 2rem;
+margin-bottom: 2rem;
+}
+
+.cake-part {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1rem;
+}
+
+.cake-part h3 {
+color: #56331B;
+font-size: 1.2rem;
+margin-bottom: 10px;
+}
+
+.cake-part-image {
+width: 180px;
+height: 180px;
+object-fit: cover;
+border-radius: 8px;
+cursor: pointer;
+transition: transform 0.3s ease;
+border: 2px solid #56331B;
+}
+
+.cake-part-image:hover {
+transform: scale(1.05);
+box-shadow: 0 4px 12px rgba(86, 51, 27, 0.2);
+}
+
+.create-btn {
+display: block;
+margin: 0 auto;
+padding: 12px 24px;
+background-color: #56331B;
+color: #FFF9CE;
+border: none;
+border-radius: 6px;
+font-size: 1.1rem;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.create-btn:hover {
+background-color: #6b3e26;
+transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+.cake-designer-container {
+    padding: 1.5rem;
+    width: 95%;
+}
+
+.cake-parts {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.cake-part-image {
+    width: 150px;
+    height: 150px;
+}
+}
