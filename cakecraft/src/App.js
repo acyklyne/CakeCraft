@@ -6,6 +6,8 @@ import WeekBestDesign from './components/WeekBestDesign';
 import Collection from './components/Collection';
 import PreDesigned from './components/PreDesigned';
 import Sustainability from './components/Sustainability';
+import FollowUs from './components/FollowUs';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
       <Collection />
       <PreDesigned />
       <Sustainability />
+      <FollowUs />
+      <Footer />
     </div>
   );
 }

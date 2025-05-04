@@ -1,0 +1,40 @@
+.followus-section h2 {
+  text-align: left;
+  margin-left: 15rem;
+  margin-bottom: 1rem;
+  font-weight: 600px;
+  font-size: 2rem;
+  color: #56331B;
+}
+
+.followus-container {
+  display: flex;
+  flex-direction: row; /* Change to row for horizontal alignment */
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  margin-bottom: 100px;
+}
+
+.logo-image {
+  width: 600px;
+  height: auto;
+  object-fit: contain;
+}
+
+.cakes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  grid-template-rows: repeat(2, 300px);
+}
+
+.cake-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
