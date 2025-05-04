@@ -60,20 +60,6 @@ html {
   justify-content: center;
 }
 
-.heart-btn svg {
-  fill: #56331B;
-  width: 20px;
-  height: 20px;
-}
-
-.heart-btn:hover {
-  background-color: #56331B;
-}
-
-.heart-btn:hover svg {
-  fill: #FFF9CE;
-}
-
 .design-info {
   padding: 1rem;
   display: flex;

@@ -65,6 +65,7 @@ body, html {
   top: 28px;
   width: 100%;
   z-index: 999;
+  box-shadow: 0 2px 4px rgba(86, 51, 27, 0.1); /* Optional: add subtle shadow for depth */
 }
 
 /* Left side nav */
@@ -227,6 +228,33 @@ body, html {
   width: 1rem;
   height: 1rem;
 }
+
+.heart-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  color: #d33;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.heart-btn:hover {
+  background: #d33;
+  color: white;
+}
+
+.heart-btn.favorited {
+  background: #d33;
+  color: white;
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/WeekBestDesign.css'; // Assuming you have a CSS file for styles
+import React, { useState } from 'react';
+import '../styles/WeekBestDesign.css';
 import { FaHeart } from 'react-icons/fa';
 
 const designs = [
@@ -30,15 +30,26 @@ const designs = [
 ];
 
 function WeekBestDesign() {
+  const [favorites, setFavorites] = useState([]);
+
+  const toggleFavorite = (id) => {
+    setFavorites((prev) =>
+      prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id]
+    );
+  };
+
   return (
     <section id="weeks-best" className="week-best-design">
-      <h2>Week’s Best Design</h2>
+      <h2>Week's Best Design</h2>
       <div className="designs-container">
         {designs.map(({ id, image, name, description, price, colors }) => (
           <div key={id} className="design-card">
             <div className="image-container">
               <img src={image} alt={name} />
-              <button className="heart-btn" aria-label="Favorite">
+              <button 
+                className={`heart-btn ${favorites.includes(id) ? 'favorited' : ''}`}
+                onClick={() => toggleFavorite(id)}
+                aria-label="Favorite">
                 <FaHeart />
               </button>
             </div>

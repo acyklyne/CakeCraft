@@ -20,7 +20,7 @@ function Navbar() {
         <button className="nav-btn" onClick={() => scrollToSection('home')}>Home</button>
         <button className="nav-btn" onClick={() => scrollToSection('weeks-best')}>Week's Best</button>
         <button className="nav-btn" onClick={() => scrollToSection('collection')}>Collection</button>
-        <button className="nav-btn">Pre-Designed</button>
+        <button className="nav-btn" onClick={() => scrollToSection('pre-designed')}>Pre-Designed</button>
         <button className="nav-btn">Sustainability</button>
       </div>
 

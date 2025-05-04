@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import MainSection from './components/MainSection';
 import WeekBestDesign from './components/WeekBestDesign';
 import Collection from './components/Collection';
+import PreDesigned from './components/PreDesigned';
+import Sustainability from './components/Sustainability';
 import './App.css';
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
       <MainSection />
       <WeekBestDesign />
       <Collection />
+      <PreDesigned />
+      <Sustainability />
     </div>
   );
 }
