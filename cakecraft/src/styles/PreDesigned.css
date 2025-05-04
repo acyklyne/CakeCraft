@@ -1,10 +1,22 @@
 .pre-designed-section h2 {
   text-align: left;
   margin-left: 15rem;
-  margin-bottom: 2rem;
-  font-weight: 750px;
+  margin-bottom: 1rem;
+  font-weight: 600px;
   font-size: 2rem;
   color: #56331B;
+}
+
+.pre-designed-section {
+  scroll-margin-top: 120px;
+  position: relative;
+}
+
+.pre-designed-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
 }
 
 .pre-designed-section::before,
@@ -34,27 +46,55 @@
   overflow-x: auto;
   padding: 1.5rem;
   gap: 2rem;
-  max-width: 1350px; /* Limit maximum width */
   width: 100%;
   margin: 0 auto;
   cursor: grab;
   user-select: none;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
-  cursor: grab;
-  position: relative;
   mask-image: linear-gradient(
-    to left,
+    -90deg,
     transparent 0%,
-    black 15px,
-    black calc(100% - 15px),
+    black 20px,
+    black calc(100% - 20px),
     transparent 100%
   );
 }
 
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(107, 62, 38, 0.8);
+  color: #FFF9CE;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.scroll-button:hover {
+  background-color: rgba(107, 62, 38, 1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.scroll-button.left {
+  left: -90px;
+}
+
+.scroll-button.right {
+  right: -90px;
+}
+
 .predesigned-card {
   position: relative;
-  width: 450px; /* Fixed width instead of min-width */
+  width: 450px;
   background: white;
   border-radius: 10px;
   border: 2px solid #61361a9a;
@@ -65,6 +105,7 @@
   align-items: center;
   padding-bottom: 1.5rem;
   transition: all 0.3s ease;
+  margin-bottom: 100px;
 }
 
 .image-container-predesigned {
@@ -102,18 +143,43 @@
   scrollbar-width: none;
 }
 
+.heart-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.heart-btn:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+.heart-btn.favorited {
+  color: #ff4d4d;
+}
+
 .edit-btn {
   margin-top: 1.2rem;
   background-color: #6b3e26;
-  color: white;
+  color: #FFF9CE;
   border: none;
   border-radius: 6px;
   padding: 8px 16px;
-  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
   z-index: 10;
-  
 }
 
 .edit-btn:hover {

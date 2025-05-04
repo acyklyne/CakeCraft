@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/Sustainability.css';
-import sustainabilityImage from '../assets/sustainability.jpg'; // Using existing bg.jpg as placeholder image
+import sustainabilityImage from '../assets/sustainability.jpg';
 
 function Sustainability() {
   return (
-    <div className="sustainability-container">
+    <div id="sustainability" className="sustainability-container">
       <img src={sustainabilityImage} alt="Sustainability" className="sustainability-image" />
       <div className="sustainability-text-box">
         <p>Stylish sustainability in design promotes</p>

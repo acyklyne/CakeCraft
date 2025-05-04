@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { FaHeart } from 'react-icons/fa';
+import React, { useState, useRef } from 'react';
+import { FaHeart, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import '../styles/PreDesigned.css';
 
 const designs = [
@@ -37,6 +37,17 @@ function PreDesigned() {
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
+  const scrollTo = (direction) => {
+    if (containerRef.current) {
+      const scrollAmount = 500;
+      const newScrollLeft = containerRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+      containerRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const toggleFavorite = (id) => {
     setFavorites((prev) =>
       prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id]
@@ -61,36 +72,54 @@ function PreDesigned() {
     if (!isDragging.current) return;
     e.preventDefault();
     const x = e.pageX - containerRef.current.offsetLeft;
-    const walk = (x - startX.current) * 2; // scroll-fast
+    const walk = (x - startX.current) * 2;
     containerRef.current.scrollLeft = scrollLeft.current - walk;
   };
 
   return (
     <section id="pre-designed" className="pre-designed-section">
       <h2>Pre-Designed</h2>
-      <div
-        className="pre-designed-container"
-        ref={containerRef}
-        onMouseDown={onMouseDown}
-        onMouseLeave={onMouseLeave}
-        onMouseUp={onMouseUp}
-        onMouseMove={onMouseMove}
-      >
-        {designs.map(({ id, image, name }) => (
-          <div key={id} className="predesigned-card">
-            <div className="image-container-predesigned">
-              <img src={image} alt={name} />
-              <button
-                className={`heart-btn ${favorites.includes(id) ? 'favorited' : ''}`}
-                onClick={() => toggleFavorite(id)}
-                aria-label="Favorite"
-              >
-                <FaHeart />
-              </button>
+      <div className="pre-designed-wrapper">
+        <button 
+          className="scroll-button left"
+          onClick={() => scrollTo('left')}
+          aria-label="Scroll left"
+        >
+          <FaChevronLeft />
+        </button>
+
+        <div
+          className="pre-designed-container"
+          ref={containerRef}
+          onMouseDown={onMouseDown}
+          onMouseLeave={onMouseLeave}
+          onMouseUp={onMouseUp}
+          onMouseMove={onMouseMove}
+        >
+          {designs.map(({ id, image, name }) => (
+            <div key={id} className="predesigned-card">
+              <div className="image-container-predesigned">
+                <img src={image} alt={name} />
+                <button
+                  className={`heart-btn ${favorites.includes(id) ? 'favorited' : ''}`}
+                  onClick={() => toggleFavorite(id)}
+                  aria-label="Favorite"
+                >
+                  <FaHeart />
+                </button>
+              </div>
+              <button className="edit-btn">Edit Design</button>
             </div>
-            <button className="edit-btn">Edit Design</button>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        <button 
+          className="scroll-button right"
+          onClick={() => scrollTo('right')}
+          aria-label="Scroll right"
+        >
+          <FaChevronRight />
+        </button>
       </div>
     </section>
   );
