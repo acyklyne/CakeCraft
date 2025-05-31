@@ -8,7 +8,7 @@ const designs = [
     image: require('../assets/bestdesign1.png'),
     name: 'Banana Delight',
     description: 'Rich banana cake with creamy frosting',
-    price: '$45',
+    price: '₱370',
     colors: ['yellow', '#A9746E', '#D9B382'],
   },
   {
@@ -16,7 +16,7 @@ const designs = [
     image: require('../assets/bestdesign2.jpg'),
     name: 'Vanilla Dream',
     description: 'Light vanilla cake with fresh cream',
-    price: '$40',
+    price: '₱350',
     colors: ['#FFF9CE', '#F5E1A4', '#D9B382'],
   },
   {
@@ -24,7 +24,7 @@ const designs = [
     image: require('../assets/bestdesign3.png'),
     name: 'Berry Bliss',
     description: 'Mixed berry cake with tangy glaze',
-    price: '$50',
+    price: '₱360',
     colors: ['#8B0000', '#FF6347', '#FFC0CB'],
   },
 ];

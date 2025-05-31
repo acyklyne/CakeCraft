@@ -30,7 +30,7 @@ function Cart({ items, onClose, onRemoveItem }) {
                 </div>
                 <div className="item-details">
                   <h3>Custom Cake Design</h3>
-                  <p>Price: ${item.price.toFixed(2)}</p>
+                  <p>Price: ₱{item.price.toFixed(2)}</p>
                 </div>
                 <button 
                   className="remove-btn"
@@ -46,7 +46,7 @@ function Cart({ items, onClose, onRemoveItem }) {
           <div className="cart-summary">
             <div className="total">
               <span>Total:</span>
-              <span>${calculateTotal().toFixed(2)}</span>
+              <span>₱{calculateTotal().toFixed(2)}</span>
             </div>
             <button className="checkout-btn">
               Proceed to Checkout

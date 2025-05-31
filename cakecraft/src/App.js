@@ -22,7 +22,7 @@ function App() {
     const newItem = {
       id: Date.now(),
       design,
-      price: 45.99
+      price: 320
     };
     setCartItems(prevItems => [...prevItems, newItem]);
     setShowCart(true);

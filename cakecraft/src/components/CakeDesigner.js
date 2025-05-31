@@ -31,7 +31,7 @@ function CakeDesigner({ onClose, onAddToCart }) {
       filling,
       frosting,
       decoration,
-      price: 45.99
+      price: 320
     };
     onAddToCart(design);
     onClose();
